@@ -15,22 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // let splitViewController = self.window!.rootViewController as! UISplitViewController
-        let splitViewController = self.window!.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("splitViewController") as! UISplitViewController
-        let leftNavController = splitViewController.viewControllers.first as! UINavigationController
-        let masterViewController = leftNavController.topViewController as! MasterViewController
-        
-        // let detailViewController = splitViewController.viewControllers.last as! DetailViewController
-        let rightNavController = splitViewController.viewControllers.last as! UINavigationController
-        let detailViewController = rightNavController.topViewController as! DetailViewController
-        
-        let firstScene = masterViewController.menuitems.first
-        detailViewController.menuitem = firstScene
-        masterViewController.delegate = detailViewController
-        
-        detailViewController.navigationItem.leftItemsSupplementBackButton = true
-        detailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
-        
         return true
     }
 
